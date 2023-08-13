@@ -74,7 +74,12 @@ async function buy() {
 
         for (let i = 0; i < events.length; ++i) {
 
-            const {trader,subject:tradingSubject} = events[i].args;
+            const {trader,subject:tradingSubject,isBuy} = events[i].args;
+
+            if(!isBuy){
+                console.log(`[SELL]skip trade: ${trader} sold ${tradingSubject}`);
+                continue;
+            }
 
             // check if the trader is qualified subject
             if (qualified.has(trader)) {
