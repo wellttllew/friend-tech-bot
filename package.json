@@ -19,6 +19,7 @@
   },
   "scripts": {
     "rebuild-qualified":"ts-node src/scan.ts",
-    "run:buy": "ts-node src/bot.ts"
+    "run:buy": "ts-node src/bot.ts",
+    "run:pnl": "ts-node src/pnl"
   }
 }

@@ -1,17 +1,30 @@
 # friend.tech Bot 
 
+- [friend.tech Bot](#friendtech-bot)
+  - [run the bot](#run-the-bot)
+  - [Rebuild the list of qualified subjects](#rebuild-the-list-of-qualified-subjects)
+  - [PnL](#pnl)
+  - [Risk](#risk)
 
-A simple bot to buy shares from qualified subjects. 
+
+
+**AT YOUR OWN RISK!**
+
+A simple naive bot to buy shares from qualified subjects. 
 A qualified subject satisfies any of the following requirements: 
 
-- A subject is considered qualified if the share supply is great enough (e.g > 10)  
+- A subject is considered qualified if the share supply of that subject is great enough (e.g > 10)  
 - A subject is considered qualified if a qualified subject bought his/her share. 
 
+Why define "qualified subjects" as above? 
 
-read [this](https://cocococococo.notion.site/Friend-tech-6b52ab29617b402ca04ecf27526139d5) first. 
+- The subject that satisfies the first condition may be a KOL. However his share is too expensive, it is riskier and capital-inefficient to buy these shares.   
+- The subject that satisfies the second condition could also be a KOL. And if his share is cheap, he may be just onboarding `friend.tech`. And there is a high possibility that he will gather more holders. 
+
+read [this](https://cocococococo.notion.site/Friend-tech-6b52ab29617b402ca04ecf27526139d5) for more. 
 
 
-## run the bot 
+## run the bot
 
 
 ```bash
@@ -20,7 +33,7 @@ yarn run:buy
 ```
 
 
-Change `MAX_PRICE_PERSHARE` in [src/constants.ts](constants.ts), if you can accept more expensive shares. 
+Change `MAX_PRICE_PERSHARE` in [constants.ts](src/constants.ts), if you can accept more expensive shares. 
 
 
 ## Rebuild the list of qualified subjects 
@@ -32,3 +45,16 @@ yarn rebuild-qualified
 ```
 
 Running this cmd would override `db.sqlite`.  
+
+
+## PnL
+
+Use the following cmd to analyze your PnL: 
+
+```bash 
+yarn run:pnl
+```
+
+## Risk 
+
+If some spammer finds this repo and learns the strategy that I used. He may spam my bot. 
